@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - docker build -t teste_ci .
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - sudo deploy.sh
